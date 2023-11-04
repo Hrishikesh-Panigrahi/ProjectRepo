@@ -40,10 +40,15 @@ void merge(int arr[], int low, int mid, int high)
 }
 void partition(int arr[], int low, int high)
 {
-    int mid = (low + high) / 2;
-    partition(arr, low, mid);
-    partition(arr, mid + 1, high);
-    merge(arr, low, mid, high);
+
+    if (low <= high)
+    {
+
+        int mid = (low + high) / 2;
+        partition(arr, low, mid);
+        partition(arr, mid + 1, high);
+        merge(arr, low, mid, high);
+    }
 }
 
 int main(int argc, char const *argv[])
